@@ -1,0 +1,25 @@
+{
+  "name": "liying-pi-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./out/main/index.js",
+  "scripts": { "dev": "electron-vite dev", "build": "electron-vite build", "typecheck": "tsc --noEmit" },
+  "dependencies": {
+    "@earendil-works/pi-coding-agent": "^0.87.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typebox": "^1.3.27",
+    "@electron-toolkit/preload": "^3.0.2",
+    "@electron-toolkit/utils": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "electron": "^38.0.0",
+    "electron-vite": "^3.0.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "typescript": "^5.6.0",
+    "vite": "^6.0.0"
+  }
+}

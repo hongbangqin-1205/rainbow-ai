@@ -1,0 +1,44 @@
+# Dependencies and build output
+node_modules/
+out/
+dist/
+release/
+*.tsbuildinfo
+
+# Environment variables and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+cookies.txt
+
+# Runtime data and generated media
+data/
+cache/
+works/
+audio/
+images/
+videos/
+video-studio/
+voice-samples/
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.download
+.cache/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+

@@ -1,0 +1,17 @@
+import { useState } from 'react'
+import { AssistantPage } from './ui/AssistantPage'
+import { HomePage } from './ui/HomePage'
+import { ApiConfigPage } from './ui/ApiConfigPage'
+import { WorksPage } from './ui/WorksPage'
+import { PublishPage } from './ui/PublishPage'
+import { ProjectSpacePage } from './ui/ProjectSpacePage'
+import { StudioPage } from './ui/StudioPage'
+import { TaskCenterPage } from './ui/TaskCenterPage'
+import { WorkspacePage } from './ui/WorkspacePage'
+import './styles.css'
+import './rainbow.css'
+import './agent.css'
+import rainbowLogo from './assets/rainbow-logo.png'
+
+type Page = 'home' | 'assistant' | 'workspace' | 'text' | 'image' | 'video' | 'audio' | 'works' | 'publish' | 'api'
+export function App() { const [page, setPage] = useState<Page>('home'); const [recreate, setRecreate] = useState<RecreatePayload | undefined>(); const [publishDraft, setPublishDraft] = useState<PublishDraft | undefined>(); const navigate = (next: Page) => { setPage(next); if (next !== 'text' && next !== 'image') setRecreate(undefined); if (next !== 'publish') setPublishDraft(undefined) }; const reuse = (payload: RecreatePayload) => { setRecreate(payload); setPage(payload.type) }; const publishWork = (key: string) => { setPublishDraft({ title: '', body: '', workKey: key }); setPage('publish') }; const publishVideo = (draft: PublishDraft) => { setPublishDraft(draft); setPage('publish') }; return <div className="shell"><aside><button className="sidebar-brand" onClick={() => navigate('home')}><div className="brand-lockup"><img src={rainbowLogo} alt="Rainbow AI" /><div className="brand-name"><strong>Rainbow</strong><span>AI</span></div></div></button><button className={page === 'home' ? 'active' : ''} onClick={() => navigate('home')}>⌂　创作首页</button><p className="side-label">开始创作</p><button className={page === 'text' ? 'active' : ''} onClick={() => navigate('text')}>▢　文本对话</button><button className={page === 'image' ? 'active' : ''} onClick={() => navigate('image')}>▧　图片创作</button><button className={page === 'workspace' ? 'active' : ''} onClick={() => navigate('workspace')}>▤　视频创作</button><button className={page === 'assistant' ? 'active' : ''} onClick={() => navigate('assistant')}>◌　项目空间</button><p className="side-label">我的工作区</p><button className={page === 'works' ? 'active' : ''} onClick={() => navigate('works')}>▣　我的作品</button><button onClick={() => navigate('workspace')}>⌁　工作台</button><button className={page === 'publish' ? 'active' : ''} onClick={() => navigate('publish')}>♧　内容发布</button><button>✧　作品广场</button><div className="sidebar-spacer" /><button className={page === 'api' ? 'active' : ''} onClick={() => navigate('api')}>⚙　API 与模型</button><button>♧　通知</button><button>▦　用户　›</button></aside><div className="content">{page === 'home' && <HomePage onNavigate={navigate} />}{page === 'assistant' && <ProjectSpacePage />}{page === 'api' && <ApiConfigPage />}{page === 'workspace' && <WorkspacePage onPublish={publishVideo} />}{page === 'works' && <WorksPage onRecreate={reuse} onPublish={publishWork} />}{page === 'publish' && <PublishPage key={publishDraft ? `${publishDraft.workKey ?? 'draft'}-${publishDraft.title}` : 'publish'} initialDraft={publishDraft} />}{page === 'text' && <StudioPage key={`text-${recreate?.conversationId ?? 'new'}`} mode="text" recreate={recreate} />}{page === 'image' && <StudioPage key={`image-${recreate?.prompt ?? 'new'}`} mode="image" recreate={recreate} />}</div></div> }

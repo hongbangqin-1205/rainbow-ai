@@ -124,4 +124,3 @@ src/
 <div align="center">
   <sub>Built for a local-first, controllable AI creation workflow.</sub>
 </div>
-
