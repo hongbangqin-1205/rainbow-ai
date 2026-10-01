@@ -25,6 +25,19 @@
 | **项目协作** | 项目、任务、作品与创作来源关联，保留任务状态和执行记录 |
 | **内容发布** | 支持多个内容平台的账号授权、发布校验和浏览器辅助发布 |
 
+## 🖼️ 产品界面
+
+<table>
+  <tr>
+    <td width="50%"><strong>创作首页</strong><br /><img src="docs/screenshots/home.png" alt="Rainbow AI 创作首页" /></td>
+    <td width="50%"><strong>图片创作</strong><br /><img src="docs/screenshots/image-studio.png" alt="Rainbow AI 图片创作工作区" /></td>
+  </tr>
+  <tr>
+    <td width="50%"><strong>视频创作</strong><br /><img src="docs/screenshots/video-studio.png" alt="Rainbow AI 视频创作工作区" /></td>
+    <td width="50%"><strong>API 与模型配置</strong><br /><img src="docs/screenshots/model-settings.png" alt="Rainbow AI API 与模型配置" /></td>
+  </tr>
+</table>
+
 ## 🧠 PI Agent 权限模型
 
 Rainbow AI 将对话能力和本地执行能力放在同一工作区，但由宿主应用强制控制工具权限。
