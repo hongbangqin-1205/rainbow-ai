@@ -5,6 +5,7 @@
   <p>对话、图片、语音、视频、数字人与内容发布，在一个桌面应用中完成。</p>
 
   <p>
+    <a href="https://github.com/hongbangqin-1205/rainbow-ai/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/hongbangqin-1205/rainbow-ai/actions/workflows/ci.yml/badge.svg" /></a>
     <img alt="Electron" src="https://img.shields.io/badge/Electron-38-47848F?logo=electron&logoColor=white" />
     <img alt="React" src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=111827" />
     <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-5.6-3178C6?logo=typescript&logoColor=white" />
